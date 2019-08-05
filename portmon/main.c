@@ -508,7 +508,7 @@ int poll_devices()
           if ((harray[i])->hname)
           {
           	
-          	float val = harray[i]->elapsedsecs/1000000.0;
+          	float val = harray[i]->elapsedsecs/1000.0;
                 fprintf(stderr, "%lld elapsedsecs, val = %.2f \n",    harray[i]->elapsedsecs, val);
 							  json_snips_log((harray[i])->hname, 2,
                    "status",  (char *) &harray[i]->status,

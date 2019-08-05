@@ -24,7 +24,7 @@
 #include <netdb.h>
 
 
-#define VARUNITS	"secs"
+#define VARUNITS	"millisecs"
 #define POLLINTERVAL  	(60*15)		/* seconds between passes */
 
 #define MAXSIMULCONNECTS	64	/* max simultaneous tcp connections */

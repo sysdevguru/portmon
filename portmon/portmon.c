@@ -122,7 +122,7 @@ int checkports(hv, nhosts, rtimeout)
     rs = rset; ws = wset;
     curtime = clock();//time(NULL);
     gettimeofday(&start, NULL);
-    if (elapsedsecs/1000000.0 >= rtimeout)
+    if (elapsedsecs/1000.0 >= rtimeout)
     {
       for (i = 0; i < nhosts; ++i)
 	close(sockarray[i]);
@@ -130,7 +130,7 @@ int checkports(hv, nhosts, rtimeout)
     }
     
     
-    tval.tv_sec = rtimeout - elapsedsecs/1000000.0;
+    tval.tv_sec = rtimeout - elapsedsecs/1000.0;
     tval.tv_usec = 0;
 #ifdef DEBUG
     if (debug > 2)
