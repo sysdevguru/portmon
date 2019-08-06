@@ -51,8 +51,8 @@ void json_snips_log(char *parent, int count, ...) {
   while (count > 0) {
     name = va_arg(argp, char*);
     value = (float *)va_arg(argp, char *);
-	printf("name: %c\n", name)
-	printf("value: %c\n", value)
+	printf("name: %c\n", name);
+	printf("value: %c\n", value);
 
     if (value != 0) {
         if (curCount < 1)
