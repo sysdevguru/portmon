@@ -42,7 +42,7 @@ void json_snips_log(char *parent, int count, ...) {
   va_list argp;
   char *name;
   float *value;
-fprintf(stderr, "%s name\n",    name);
+fprintf(jsonf, "%s name: %d value\n",    name, *((int *)value));
   int curCount = 0;
   fprintf(jsonf, "%c\n\t\t\t\"%s\": {", json_count ? ',' : ' ', parent);
 
