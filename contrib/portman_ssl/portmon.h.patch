@@ -8,5 +8,5 @@
   
 + #define WITH_SSL
   
-  #define VARUNITS	"secs"
+  #define VARUNITS	"msecs"
   #define POLLINTERVAL  	(60*15)		/* seconds between passes */

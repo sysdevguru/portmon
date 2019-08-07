@@ -108,7 +108,7 @@ char *event_to_logstr(v)
 		  "DEVICE %s%s%s %s VAR %s %ld %ld %s LEVEL %s LOGLEVEL %s STATE %s\n",
 		  v->device.subdev, "+", 
 		  v->device.name, v->device.addr,
-		  v->var.name, v->var.value, v->var.threshold, v->var.units,
+		  v->var.name, v->var.value/1000.0, v->var.threshold, v->var.units,
 		  severity_txt[v->severity], severity_txt[v->loglevel],
 		  states) ;
   } else {
@@ -116,7 +116,7 @@ char *event_to_logstr(v)
 		  "DEVICE %s%s%s %s VAR %s %ld %ld %s LEVEL %s LOGLEVEL %s STATE %s\n",
 		  "", "",
 		  v->device.name, v->device.addr,
-		  v->var.name, v->var.value, v->var.threshold, v->var.units,
+		  v->var.name, v->var.value/1000.0, v->var.threshold, v->var.units,
 		  severity_txt[v->severity], severity_txt[v->loglevel],
 		  states) ;
   }
@@ -148,7 +148,7 @@ int init_event(pv)
   pv->polltime = (u_long)clock;
 
   pv->var.value = 0 ;
-  pv->var.threshold = 0 ;		/* threshold not set here */
+  pv->var.threshold = 30 ;		/* threshold not set here */
   pv->state = SETF_UPDOUN (pv->state, n_UNKNOWN); /* Set all to UNKNOWN */
   pv->severity = E_INFO ;
   pv->loglevel = E_INFO;
