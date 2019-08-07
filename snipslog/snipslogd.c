@@ -362,6 +362,7 @@ int readevent(fd)
 	}
         memset(fullLogStr, 0x00, sizeof(fullLogStr));
 		v.var.threshold = v.var.threshold / 1000.0;
+		fprintf(stderr, "threshold '%.2f'\n", v.var.threshold);
         char *logStr = event_to_logstr(&v);
         if (logStr) {
             logStr[strlen(logStr) - 1] = '\0';
