@@ -512,9 +512,9 @@ int poll_devices()
 			  int val1 = v.loglevel;
                 fprintf(stderr, "%lld elapsedsecs, val = %.2f, loglevel = %d \n",    harray[i]->elapsedsecs, val, val1);
 							  
-				json_snips_logs((harray[i])->hname, 3,
+				json_snips_log((harray[i])->hname, 3,
                    "status",  (char *) &harray[i]->status,
-				   "loglevel",	(char *) &val1,
+				   "loglevel",	(char *) &harray[i]->status,
                    "conntime",  (char *) &val
                            );
 
