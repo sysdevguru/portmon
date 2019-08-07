@@ -190,7 +190,7 @@ int checkports(hv, nhosts, rtimeout)
 	else	/* ready for reading/writing and connected */
 	{
 	  hv[i]->elapsedsecs = elapsedsecs;	/* store elapsed time */
-    fprintf(stderr, "%lld elapsed millisecs\n",    hv[i]->elapsedsecs/1000.0);
+    fprintf(stderr, "%lld elapsed msecs\n",    hv[i]->elapsedsecs/1000.0);
 
 	  if (FD_ISSET(sockarray[i], &ws))
 	    send_hoststring(sockarray[i], hv[i]);
