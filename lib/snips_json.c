@@ -22,7 +22,7 @@ void json_init_extension(char *prognm, char *hardcoded_val, char *fileExtension)
     if (fileExtension)
         fileExt = fileExtension;
     
-    snprintf(jsonfn_real, 512,  "%s/%s__snips.%ld.%s", /*get_jsondir()*/ JSON_DIR, prognm,
+    snprintf(jsonfn_real, 512,  "%s/%s__snnips.%ld.%s", /*get_jsondir()*/ JSON_DIR, prognm,
         time(NULL), fileExt);
    
     
@@ -38,39 +38,39 @@ void json_init_extension(char *prognm, char *hardcoded_val, char *fileExtension)
     json_count = 0;
 }
 
-// void json_snips_log(char *parent, int count, ...) {
-//   va_list argp;
-//   char *name;
-//   float *value;
+void json_snips_log(char *parent, int count, ...) {
+  va_list argp;
+  char *name;
+  float *value;
 
-//   int curCount = 0;
-//   fprintf(jsonf, "%c\n\t\t\t\"%s\": {", json_count ? ',' : ' ', parent);
+  int curCount = 0;
+  fprintf(jsonf, "%c\n\t\t\t\"%s\": {", json_count ? ',' : ' ', parent);
 
-//   va_start(argp, count);
+  va_start(argp, count);
 
-//   while (count > 0) {
-//     name = va_arg(argp, char*);
-//     value = (float *)va_arg(argp, char *);
+  while (count > 0) {
+    name = va_arg(argp, char*);
+    value = (float *)va_arg(argp, char *);
 
-//     if (value != 0) {
-//         if (curCount <= 1)
-//        	fprintf(jsonf, "\n\t\t\t\t\"%s\": %d%c", name, *((int *)value), count > 1 ? ':' : ' ');
-// 		else
-//        	fprintf(jsonf, "\n\t\t\t\t\"%s\": %.9f%c", name, *((float *)value), count > 1 ? ':' : ' ');
+    if (value != 0) {
+        if (curCount <= 1)
+       	fprintf(jsonf, "\n\t\t\t\t\"%s\": %d%c", name, *((int *)value), count > 1 ? ':' : ' ');
+		else
+       	fprintf(jsonf, "\n\t\t\t\t\"%s\": %.9f%c", name, *((float *)value), count > 1 ? ':' : ' ');
 
-//     } else {
-//       fprintf(jsonf, "\n\t\t\t\t\"%s\": null%c", name, count > 1 ? ',' : ' ');
-//     }
+    } else {
+      fprintf(jsonf, "\n\t\t\t\t\"%s\": null%c", name, count > 1 ? ',' : ' ');
+    }
 
-//                 curCount++;
-//     count--;
-//   }
+                curCount++;
+    count--;
+  }
 
-//   va_end(argp);
+  va_end(argp);
 
-//   fprintf(jsonf, "\n\t\t\t}");
-//   json_count++;
-// }
+  fprintf(jsonf, "\n\t\t\t}");
+  json_count++;
+}
 
 
 void json_log(char *parent, int count, ...) {
