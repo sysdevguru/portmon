@@ -38,7 +38,7 @@ void json_init_extension(char *prognm, char *hardcoded_val, char *fileExtension)
     json_count = 0;
 }
 
-void json_snips_log(char *parent, int count, ...) {
+// void json_snips_log(char *parent, int count, ...) {
 //   va_list argp;
 //   char *name;
 //   float *value;
@@ -70,7 +70,7 @@ void json_snips_log(char *parent, int count, ...) {
 
 //   fprintf(jsonf, "\n\t\t\t}");
 //   json_count++;
-}
+// }
 
 
 void json_log(char *parent, int count, ...) {
