@@ -108,7 +108,7 @@ char *event_to_logstr(v)
 		  "DEVICE %s%s%s %s VAR %s %ld %ld %s LEVEL %s LOGLEVEL %s STATE %s\n",
 		  v->device.subdev, "+", 
 		  v->device.name, v->device.addr,
-		  v->var.name, v->var.value/1000.0, v->var.threshold, v->var.units,
+		  v->var.name, v->var.value, v->var.threshold, v->var.units,
 		  severity_txt[v->severity], severity_txt[v->loglevel],
 		  states) ;
   } else {
@@ -116,7 +116,7 @@ char *event_to_logstr(v)
 		  "DEVICE %s%s%s %s VAR %s %ld %ld %s LEVEL %s LOGLEVEL %s STATE %s\n",
 		  "", "",
 		  v->device.name, v->device.addr,
-		  v->var.name, v->var.value/1000.0, v->var.threshold, v->var.units,
+		  v->var.name, v->var.value, v->var.threshold, v->var.units,
 		  severity_txt[v->severity], severity_txt[v->loglevel],
 		  states) ;
   }
