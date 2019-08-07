@@ -514,7 +514,7 @@ int poll_devices()
 							  
 				json_snips_log((harray[i])->hname, 3,
                    "status",  (char *) &harray[i]->status,
-				   "loglevel",	(char *) &harray[i]->status,
+				   "loglevel",	(char *) &val1,
                    "conntime",  (char *) &val
                            );
 
