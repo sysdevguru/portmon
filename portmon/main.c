@@ -509,7 +509,7 @@ int poll_devices()
           {
           	
           	float val = harray[i]->elapsedsecs/1000.0;
-			  float val1 = v.loglevel;
+			  int val1 = v.loglevel;
                 fprintf(stderr, "%lld elapsedsecs, val = %.2f, loglevel = %d \n",    harray[i]->elapsedsecs, val, val1);
 							  
 				json_snips_logs((harray[i])->hname, 3,
