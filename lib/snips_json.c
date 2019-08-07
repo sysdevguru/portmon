@@ -38,7 +38,7 @@ void json_init_extension(char *prognm, char *hardcoded_val, char *fileExtension)
     json_count = 0;
 }
 
-void json_snips_log(char *parent, int count, ...) {
+void json_snips_logs(char *parent, int count, ...) {
   va_list argp;
   char *name;
   float *value;
@@ -90,9 +90,9 @@ void json_log(char *parent, int count, ...) {
 
     if (value != 0) {
     	if (curCount <= 1)
-            fprintf(jsonf, "\n\"%s\": %d%c", name, (int) *value, count > 1 ? ',' : ' ');
+            fprintf(jsonf, "\n\t\t\t\t\"%s\": %d%c", name, (int) *value, count > 1 ? ',' : ' ');
         else
-            fprintf(jsonf, "\n\"%s\": %.2f%c", name, *value, count > 1 ? ',' : ' ');
+            fprintf(jsonf, "\n\t\t\t\t\"%s\": %.2f%c", name, *value, count > 1 ? ',' : ' ');
 
     } else {
       fprintf(jsonf, "\n\t\t\t\t\"%s\": null%c", name, count > 1 ? ',' : ' ');
