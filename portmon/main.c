@@ -513,7 +513,7 @@ int poll_devices()
 							  
 				json_snips_logs((harray[i])->hname, 3,
                    "status",  (char *) &harray[i]->status,
-				   "level1",	 (char *) "Info",
+				   "level1",	 v.loglevel,
                    "conntime",  (char *) &val
                            );
 
