@@ -51,7 +51,6 @@ fprintf(stderr, "%s name\n",    name);
   while (count > 0) {
     name = va_arg(argp, char*);
     value = (float *)va_arg(argp, char *);
-	fprintf(stderr, "%c name, value = %c \n",    name, value);
 
     if (value != 0) {
         if (curCount < 1)
