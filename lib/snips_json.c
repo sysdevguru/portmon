@@ -51,6 +51,7 @@ void json_snips_log(char *parent, int count, ...) {
   while (count > 0) {
     name = va_arg(argp, char*);
     value = (float *)va_arg(argp, char *);
+	fprintf("testing\n");
 	fprintf(stderr, "%c name, value = %c \n",    name, value);
 
     if (value != 0) {
