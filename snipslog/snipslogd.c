@@ -302,8 +302,9 @@ int readevent(fd)
   senderIPString = inet_ntoa(frominet.sin_addr);
   signal(SIGALRM, SIG_IGN);		/* ignore alarm */
   alarm(0) ;
-fprintf(stderr, "threshold '%s'\n", v.var.units);
+
   ntohevent(&v, &v);			/* network to host endian */
+  fprintf(stderr, "threshold '%s'\n", v.var.units);
 
   /* make sure that evnetime got some value*/
   if (!v.eventtime)
