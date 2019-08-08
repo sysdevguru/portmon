@@ -302,7 +302,7 @@ int readevent(fd)
   senderIPString = inet_ntoa(frominet.sin_addr);
   signal(SIGALRM, SIG_IGN);		/* ignore alarm */
   alarm(0) ;
-
+fprintf(stderr, "threshold '%s'\n", v.var.units);
   ntohevent(&v, &v);			/* network to host endian */
 
   /* make sure that evnetime got some value*/
@@ -362,7 +362,7 @@ int readevent(fd)
 	}
         memset(fullLogStr, 0x00, sizeof(fullLogStr));
 		v.var.threshold = v.var.threshold/1000.0;
-		fprintf(stderr, "threshold '%lu'\n", v.var.threshold);
+		
         char *logStr = event_to_logstr(&v);
         if (logStr) {
             logStr[strlen(logStr) - 1] = '\0';
