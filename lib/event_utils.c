@@ -59,8 +59,8 @@ char *event_to_logstr(v)
   char states[32];
   char datestr[32] ;
   time_t locclock ;
-fprintf(stderr, "threshold %lu\n", v.var.threshold);
-		fprintf(stderr, "value %lu\n", v.var.value);
+fprintf(stderr, "threshold %lu\n", v->var.threshold);
+		fprintf(stderr, "value %lu\n", v->var.value);
   if (v == NULL)
     return ("\n");
 
