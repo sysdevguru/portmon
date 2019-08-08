@@ -304,7 +304,6 @@ int readevent(fd)
   alarm(0) ;
 
   ntohevent(&v, &v);			/* network to host endian */
-  fprintf(stderr, "threshold %lu\n", v.var.threshold);
 
   /* make sure that evnetime got some value*/
   if (!v.eventtime)
@@ -362,6 +361,8 @@ int readevent(fd)
 	  }
 	}
         memset(fullLogStr, 0x00, sizeof(fullLogStr));
+		fprintf(stderr, "threshold %lu\n", v.var.threshold);
+		fprintf(stderr, "value %lu\n", v.var.value);
 		v.var.threshold = v.var.threshold/1000.0;
 		
         char *logStr = event_to_logstr(&v);
