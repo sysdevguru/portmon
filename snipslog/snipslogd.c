@@ -304,7 +304,7 @@ int readevent(fd)
   alarm(0) ;
 
   ntohevent(&v, &v);			/* network to host endian */
-  fprintf(stderr, "threshold '%s'\n", v.var.units);
+  fprintf(stderr, "threshold %lu\n", v.var.threshold);
 
   /* make sure that evnetime got some value*/
   if (!v.eventtime)
