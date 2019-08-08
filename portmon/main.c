@@ -195,6 +195,7 @@ int readconfig()
   init_event(&v);
   strncpy (v.sender, sender, sizeof(v.sender) - 1);
   strncpy (v.var.units, VARUNITS, sizeof (v.var.units) - 1);
+  fprintf(stderr, "%s portmon unit", v.var.units) ;
 
   /*
    * Now parse the config file
